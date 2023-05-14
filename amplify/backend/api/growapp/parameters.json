@@ -1,0 +1,12 @@
+{
+  "AppSyncApiName": "growapp",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authgrowapp0f94aed0",
+      "Outputs.UserPoolId"
+    ]
+  },
+  "AuthModeLastUpdated": "2023-05-14T21:29:41.891Z"
+}
