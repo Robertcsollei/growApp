@@ -14,7 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: const RootPage(),
-        theme: ThemeData(primarySwatch: Colors.green));
+        theme: ThemeData(
+            brightness: Brightness.dark, primarySwatch: Colors.lightGreen));
   }
 }
 
@@ -32,13 +33,15 @@ class _RootPageState extends State<RootPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Grow App"),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.account_circle_rounded),
+            onPressed: () {},
+          )
+        ],
       ),
       body: const HomePage(),
-      floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            debugPrint("Hello world!");
-          },
-          child: const Icon(Icons.add)),
       bottomNavigationBar: NavigationBar(
         destinations: const [
           NavigationDestination(icon: Icon(Icons.home), label: "Home"),
