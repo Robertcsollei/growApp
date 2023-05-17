@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-
-import 'home_page.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'pages/home_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    // Adding ProviderScope enables Riverpod for the entire project
+    const ProviderScope(child: MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -18,6 +21,9 @@ class MyApp extends StatelessWidget {
             brightness: Brightness.dark, primarySwatch: Colors.lightGreen));
   }
 }
+
+/// Providers are declared globally and specify how to create a state
+final counterProvider = StateProvider((ref) => 0);
 
 class RootPage extends StatefulWidget {
   const RootPage({super.key});
